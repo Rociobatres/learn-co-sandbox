@@ -17,14 +17,7 @@ class Scraper
     end
   end
   
-  def print_courses
+  def begin_scrape
     self.apply_info
-  #  AnimeCollection.all.each do |course|
-  #    if course.title && course.title != ""
-  #      puts "Title: #{course.title}"
-  #      puts "  Episode_count: #{course.schedule}"
-  #      puts "  Description: #{course.description}"
-  #    end
-  #  end
   end
 end 

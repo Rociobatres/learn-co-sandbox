@@ -7,6 +7,8 @@ class Director
   end 
   
   def anime_lists 
+    AnimeCollection.new("Hello", 12, "wholesome show")
+    AnimeCollection.new("Goodbye",278, "scary, horror")
     @animecollection = AnimeCollection.all   
   end 
   
@@ -15,7 +17,7 @@ class Director
     if user_pref == "short"
       puts "\nThese animes are 25 episodes or less!\n"
       @animecollection.each.with_index(1) do |anime, idx|
-        puts "#{idx}. #{anime.name}"
+        puts "#{idx}. #{anime.title}"
       end 
     elsif user_pref == "medium"
       puts "\nThese animes are 26 to 100 episodes!"
