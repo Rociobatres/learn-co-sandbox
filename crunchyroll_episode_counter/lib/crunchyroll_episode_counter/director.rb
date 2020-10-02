@@ -12,7 +12,8 @@ class CrunchyrollEpisodeCounter::Director
   def anime_length 
     user_pref = gets.strip   
     if user_pref == "short"
-      puts "\nThese animes are 25 episodes or less!"
+      #puts "\nThese animes are 25 episodes or less!"
+      puts @AnimeCollection 
     elsif user_pref == "medium"
       puts "\nThese animes are 26 to 100 episodes!"
     elsif user_pref == "long" 
@@ -24,8 +25,6 @@ class CrunchyrollEpisodeCounter::Director
   end 
   
   def length_list 
-    AnimeCollection.short.select #create the array in AnimeCollection class 
-    AnimeCollection.medium.select #create the array 
-    AnimeCollection.long.select #create the array 
+    @AnimeCollection = CrunchyrollEpisodeCounter::AnimeCollection.all  
   end 
 end 

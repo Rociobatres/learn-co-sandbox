@@ -1,3 +1,4 @@
+require_relative "./crunchyroll_episode_counter/scraper.rb"
 class CrunchyrollEpisodeCounter::AnimeCollection 
  
 @@all = []  
@@ -5,14 +6,7 @@ class CrunchyrollEpisodeCounter::AnimeCollection
 attr_accessor :title, :episode_count, :description 
 
 def initialize 
-  @name = name 
-  @episode_count = episode_count 
-  @description = description 
-  save 
-end 
-  
-def save  
-  @@all << self 
+  @@all << self  
 end 
 
 def self.all
