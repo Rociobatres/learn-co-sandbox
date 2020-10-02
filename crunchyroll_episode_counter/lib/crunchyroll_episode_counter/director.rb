@@ -1,7 +1,7 @@
 class CrunchyrollEpisodeCounter::Director 
   #the #call method will be what brings all the methods together when it is called in the bin 
   def call 
-    puts "\nWelcome to the Crunchyroll episode counter! I will be directing you to your next anime! What kind of anime do you to watch? (Accepts: short, medium, long) : \n"
+    puts "\nWelcome to the Crunchyroll episode counter! I will be directing you to your next anime! What kind of anime do you want to watch? (Accepts: short, medium, long): \n"
     anime_length #this method will take the users response and call the appropriate array  
     #length_lists #this method will hold the arrays according to length
     #collection_scraper #this method will be the scraper getting the information from Crunchyroll 
@@ -12,18 +12,20 @@ class CrunchyrollEpisodeCounter::Director
   def anime_length 
     user_pref = gets.strip   
     if user_pref == "short"
-      puts @short = ["\nThese animes are 25 episodes or less!"]
+      puts "\nThese animes are 25 episodes or less!"
     elsif user_pref == "medium"
-      puts @medium =["\nThese animes are 26 to 100 episodes!"]
-    else 
-      puts @long = ["\nThese animes are 100+ episodes long!"] 
+      puts "\nThese animes are 26 to 100 episodes!"
+    elsif user_pref == "long" 
+      puts "\nThese animes are 100+ episodes long!" 
       #come back and enter a diff 'else' for when they type in something other than 'short', 'medium', or 'long'
-    end
+    else 
+      puts "\nSorry dear, try again and input: short, medium, or long"
+    end #would like to loop it back to the beginning instead of having them type ./bin again :( 
   end 
   
   def length_list 
-    @short = ["These are short animes"]
-    @medium = ["These are medium animes"]
-    @long = ["These are long ass animes"]
+    AnimeCollection.short.select #create the array in AnimeCollection class 
+    AnimeCollection.medium.select #create the array 
+    AnimeCollection.long.select #create the array 
   end 
 end 
