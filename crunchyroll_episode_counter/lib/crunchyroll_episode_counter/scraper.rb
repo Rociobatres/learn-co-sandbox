@@ -1,7 +1,6 @@
-require_relative "./crunchyroll_episode_counter/anime_collection.rb"
-class CrunchyrollEpisodeCounter::Scraper
+class Scraper
 
-  def self.scrape_anime 
+  def scrape_anime 
     doc = Nokogiri::HTML(open("https://www.crunchyroll.com/videos/anime/alpha?group=a"))
   end
  
@@ -18,8 +17,8 @@ class CrunchyrollEpisodeCounter::Scraper
     end
   end
   
-  #def print_courses
-  #  self.apply_info
+  def print_courses
+    self.apply_info
   #  AnimeCollection.all.each do |course|
   #    if course.title && course.title != ""
   #      puts "Title: #{course.title}"
@@ -27,5 +26,5 @@ class CrunchyrollEpisodeCounter::Scraper
   #      puts "  Description: #{course.description}"
   #    end
   #  end
-  #end
+  end
 end 

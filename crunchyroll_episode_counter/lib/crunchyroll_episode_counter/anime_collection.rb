@@ -1,5 +1,4 @@
-require_relative "./crunchyroll_episode_counter/scraper.rb"
-class CrunchyrollEpisodeCounter::AnimeCollection 
+class AnimeCollection 
  
 @@all = []  
 
@@ -10,6 +9,7 @@ def initialize
 end 
 
 def self.all
+  Scraper.new.print_courses if @@all.empty?
   @@all 
 end 
   
