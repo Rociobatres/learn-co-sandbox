@@ -17,7 +17,7 @@ class Director
     if user_pref == "short"
       puts "\nThese shows are 25 episodes or less!\n"
       @mycollection.each.with_index(1) do |show, idx|
-        puts "#{idx}. #{show.name}"
+        puts "#{idx}. #{show.name} #{show.episode_count}"
       end 
     elsif user_pref == "medium"
       puts "\nThese shows are 26 to 100 episodes!"

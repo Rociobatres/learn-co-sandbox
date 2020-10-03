@@ -1,6 +1,6 @@
 require_relative "./episode_counter/version"
 require_relative "./episode_counter/director"
-require_relative "./episode_counter/anime_collection"
+require_relative "./episode_counter/my_collection"
 require_relative "./episode_counter/scraper"
 
 require 'nokogiri'
