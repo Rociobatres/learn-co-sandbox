@@ -8,5 +8,6 @@ require 'open-uri'
 
 module NetflixEpisodeCounter
   class Error < StandardError; end
-  # Your code goes here...
 end
+
+

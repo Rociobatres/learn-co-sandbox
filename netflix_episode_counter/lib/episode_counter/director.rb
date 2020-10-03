@@ -1,23 +1,29 @@
 class Director 
 
   def call 
-    puts "\nWelcome to my Netflix episode counter! I will be directing you to your next show! What kind of show do you want to watch? (Accepts: short, medium, long): \n"
+    puts "\nHello friend! Welcome to Random Anime Chooser! I'll be your director today and I will be picking from my collection of great anime. Give me a number 1 - 32: \n"
     show_lists 
     show_length
+  end 
+  
+  def get_lists
+    Scraper.apply_info 
   end 
   
   def show_lists 
     #MyCollection.new("Hello", 12, "wholesome show")
     #MyCollection.new("Goodbye",278, "scary, horror")
-    @mycollection = MyCollection.all   
+    get_lists
+    @mycollection = MyCollection.all
   end 
   
   def show_length 
     user_pref = gets.strip   
     if user_pref == "short"
       puts "\nThese shows are 25 episodes or less!\n"
-      @mycollection.each.with_index(1) do |show, idx|
-        puts "#{idx}. #{show.name} #{show.episode_count}"
+      @mycollection.each.with_index(1) do |program, idx|
+        puts "#{idx}. #{program.name} \n#{program.description}"
+        #puts "#{idx}. #{program.name}"
       end 
     elsif user_pref == "medium"
       puts "\nThese shows are 26 to 100 episodes!"
