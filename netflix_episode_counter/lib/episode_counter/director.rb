@@ -3,7 +3,7 @@ class Director
   def call 
     puts "\nHello friend! Welcome to Random Anime Chooser! I'll be your director today and I will be picking from my collection of great anime. Give me a number 1 - 32: \n"
     show_lists 
-    show_length
+    user_input 
   end 
   
   def get_lists
@@ -11,27 +11,24 @@ class Director
   end 
   
   def show_lists 
-    #MyCollection.new("Hello", 12, "wholesome show")
-    #MyCollection.new("Goodbye",278, "scary, horror")
     get_lists
-    @mycollection = MyCollection.all
+    @mycollection = MyCollection.all 
+  end 
+
+  def user_input
+    user_pick = gets.strip.to_i 
+    choose_show(user_pick)
   end 
   
-  def show_length 
-    user_pref = gets.strip   
-    if user_pref == "short"
-      puts "\nThese shows are 25 episodes or less!\n"
-      @mycollection.each.with_index(1) do |program, idx|
-        puts "#{idx}. #{program.name} \n#{program.description}"
-        #puts "#{idx}. #{program.name}"
-      end 
-    elsif user_pref == "medium"
-      puts "\nThese shows are 26 to 100 episodes!"
-    elsif user_pref == "long" 
-      puts "\nThese shows are 100+ episodes long!" 
-    else 
-      puts "\nSorry dear, try again and input: short, medium, or long"
-    end #would like to loop it back to the beginning instead of having them type ./bin again :( 
+  def choose_show(user_pick)
+    anime = @mycollection[user_pick]
+    puts "You got *#{anime.name[3..-1]}* !\nWould you like to see a short description? \n(Enter '1' for Yes or '2' for No)"
+    user_choice = gets.strip 
+    if user_choice == "1"
+      puts "#{anime.description}"
+    elsif user_choice != "1" 
+      puts "Thank you for looking through my collection! Come back for more anime recommendations"
+    end 
   end 
 
 end 
