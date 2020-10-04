@@ -1,7 +1,7 @@
-require_relative "./episode_counter/version"
-require_relative "./episode_counter/director"
-require_relative "./episode_counter/my_collection"
-require_relative "./episode_counter/scraper"
+require_relative "./anime_chooser/version"
+require_relative "./anime_chooser/director"
+require_relative "./anime_chooser/my_collection"
+require_relative "./anime_chooser/scraper"
 
 require 'nokogiri'
 require 'open-uri'
