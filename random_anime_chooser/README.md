@@ -1,4 +1,4 @@
-# RandomAnimeChooserm
+# RandomAnimeChooser
 
 Welcome to random_anime_chooser gem! To begin this gem, run ./bin/anime_chooser and follow the directions given to you in your terminal. This gem scrapes the titles and descriptions of 32 popular and well-known animes from the popular site Buzzfeed. It then creates 32 instances of the MyCollection class with the attributes of name and description. The Director class tells the user to provide a number 1-32 and then outputs an anime from the list. It then asks the user if they would like to see a description of the chosen anime. Lastly, the user is thanked and the program can be used again with the ./bin/anime_chooser command. 
 
