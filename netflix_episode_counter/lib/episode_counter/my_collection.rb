@@ -4,7 +4,7 @@ class MyCollection
 
 attr_accessor :number, :name, :description 
 
-def initialize(number, name,description)
+def initialize(number, name, description)
   @number = number 
   @name = name
   @description = description
@@ -12,6 +12,21 @@ def initialize(number, name,description)
 end 
 
 def self.all
-  @@all 
+  @@all.delete_at(45)
+  @@all.delete_at(44)
+  @@all.delete_at(43)
+  @@all.delete_at(39)
+  @@all.delete_at(35)
+  @@all.delete_at(31)
+  @@all.delete_at(28)
+  @@all.delete_at(24)
+  @@all.delete_at(21)
+  @@all.delete_at(17)
+  @@all.delete_at(13)
+  @@all.delete_at(8)
+  @@all.delete_at(4)
+  @@all.delete_at(0)
+  @@all  
 end 
+
 end 
