@@ -27,6 +27,11 @@ def self.all
   @@all.delete_at(0)
   @@all  
   @@all 
+end
+
+def self.ordered_title
+  @titles = MyCollection.all 
+  @titles.sort_by {|anime| anime.name} 
 end 
 
 end 
